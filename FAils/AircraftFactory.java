@@ -3,7 +3,7 @@ public class AircraftFactory {
 
         Coordinates coordinates = new Coordinates(longitude, latitude, height);
 
-        if (type.toLowerCase().contains("Baloon")){
+        if (type.toLowerCase().equals("baloon")){
             return new Baloon(name, coordinates);
         }
         else if (type.toLowerCase().equals("jetplane"))
