@@ -5,17 +5,25 @@ public class Coordinates {
     private int height;
 
     Coordinates(int longitude, int latitude, int height) {
-        this.longitude = longitude;
-        this.latitude = latitude;
-        this.height = height;
+
         if (latitude < 0)
-            latitude = 0;
+            this.latitude = 0;
+        else
+            this.latitude = latitude;
         if (longitude < 0)
-            longitude = 0;
+            this.longitude = 0;
+        else
+            this.longitude =longitude;
         if (height < 0)
-            height = 0;
-        if (height > 100)
-            height = 100;
+            this.height = 0;
+        else if (height > 100)
+            this.height = 100;
+        else
+        {
+            this.height = height;
+        }
+        //System.out.println("\nheight: " + this.height + "\nlatitude: " + this.latitude + "\nlongitude: " + this.longitude);
+
     }
     public int getLongitude() {
         return this.longitude;
